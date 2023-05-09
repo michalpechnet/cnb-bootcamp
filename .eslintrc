@@ -1,0 +1,93 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "simple-import-sort"],
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "curly": ["error", "all"],
+    "simple-import-sort/imports": "error",
+    "import/order": "off", // to prevent conflicts use simple-import-sort/sort for imports sort instead
+    "sort-imports": "off", // to prevent conflicts use simple-import-sort/sort for imports sort instead
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-cycle": "error",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic",
+        "readonly": "generic"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unnecessary-condition": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "react/display-name": "off",
+    "react/no-unescaped-entities": "error",
+    // note you must disable the base rule as it can report incorrect errors
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "__",
+        "argsIgnorePattern": "^_",
+        "args": "after-used",
+        "ignoreRestSiblings": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["api/**/*.ts"],
+      "rules": {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
+  "settings": {
+    "import/ignore": ["node_modules"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        "project": "./tsconfig.json"
+      }
+    },
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  }
+}
