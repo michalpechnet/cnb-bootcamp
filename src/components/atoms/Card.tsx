@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: ${theme.spacing[2]};
+  padding: ${theme.spacing[2]} 0;
 `;
 
 const Container = styled.div`

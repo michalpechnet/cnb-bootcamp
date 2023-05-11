@@ -10,7 +10,7 @@ type Props = {
 
 export const ExchangeRatesTable: React.FC<Props> = ({ exchangeRates }) => {
   return (
-    <Card header="Exchange rates">
+    <Card header="Exchange rates 📈">
       <Table>
         <THead>
           <Tr>
