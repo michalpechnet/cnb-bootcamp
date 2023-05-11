@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { ExchangeRateData } from '../types';
+
 export const useExchangeRates = () => {
-  return useQuery({
+  return useQuery<unknown, unknown, ExchangeRateData>({
     queryKey: ['exchangeRates'],
     queryFn: async () => {
       const response = await fetch('/api/exchange-rates');
