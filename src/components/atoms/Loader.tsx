@@ -5,7 +5,7 @@ import { useDelayUnmount } from '../../hooks/useDelayUnmount';
 
 // Inspired by https://css-generators.com/gradient-shadows/
 
-export const Box = styled.div<Props>`
+const Box = styled.div<Props>`
   position: relative;
   transform-style: preserve-3d;
   border-radius: 5rem;

@@ -10,6 +10,7 @@ export const theme = {
     textPrimary: '#222222',
     textSecondary: '#464853',
     textTertiary: '#999999',
+    textError: '#ff0000',
   },
   gradients: {
     background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);',

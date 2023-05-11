@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 import { theme } from '../../lib/theme';
@@ -28,7 +28,14 @@ const Input = styled.input`
   -moz-appearance: textfield;
 `;
 
+const Error = styled.span`
+  color: ${theme.colors.textError};
+  font-size: 0.8125rem;
+`;
+
 export const NumberField: React.FC<Props> = ({ value, onChange }) => {
+  const [isTouched, setIsTouched] = useState(false);
+
   const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
       const inputValue = event.target.value;
@@ -38,5 +45,17 @@ export const NumberField: React.FC<Props> = ({ value, onChange }) => {
     [onChange],
   );
 
-  return <Input min="0" type="number" value={value || ''} onChange={handleOnChange} placeholder="1000" />;
+  return (
+    <>
+      <Input
+        min="0"
+        type="number"
+        value={value || ''}
+        onChange={handleOnChange}
+        onKeyDown={() => setIsTouched(true)}
+        placeholder="1000"
+      />
+      {isTouched && !value && <Error>Enter valid number</Error>}
+    </>
+  );
 };
