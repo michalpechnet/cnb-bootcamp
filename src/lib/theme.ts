@@ -15,6 +15,7 @@ export const theme = {
   gradients: {
     background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);',
     header: '-webkit-linear-gradient(left, #144bb7, #0066ff)',
+    loader: 'conic-gradient(#144bb7, #0066ff, #dce3ee, #0066ff, #144bb7)',
   },
   mediaBreakpoints: {
     md: 'min-width: 48rem', // Eq. 768px

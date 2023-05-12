@@ -12,7 +12,7 @@ const Container = styled.div<Props>`
   padding: ${theme.spacing[2]};
   opacity: 1;
   transform: translateY(20vh);
-  ${({ isLoaded }) => (isLoaded ? `animation:  loadHeader 1.2s ${theme.animations.easing} 0.5s forwards;` : '')};
+  ${({ isLoaded }) => (isLoaded ? `animation:  loadHeader 1.2s ${theme.animations.easing} 1s forwards;` : '')};
 
   @keyframes loadHeader {
     0% {

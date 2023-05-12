@@ -22,7 +22,7 @@ const Content = styled.div<{ isLoaded: boolean }>`
 
   transform: translateY(25vh);
   opacity: 0;
-  ${({ isLoaded }) => (isLoaded ? `animation: loadContent 1.2s ${theme.animations.easing} 0.5s forwards;` : '')};
+  ${({ isLoaded }) => (isLoaded ? `animation: loadContent 1.2s ${theme.animations.easing} 1s forwards;` : '')};
 
   @keyframes loadContent {
     0% {
